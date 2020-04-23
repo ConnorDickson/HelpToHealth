@@ -19,29 +19,20 @@
           <input matInput placeholder="Phone">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Location">
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Register as...</mat-label>
-          <mat-select [(value)]="selected">
-            <mat-option value="Volunteer">Volunteer</mat-option>
-            <mat-option value="Professional">Professional</mat-option>
-          </mat-select>
-        </mat-form-field>
         <!-- https://www.npmjs.com/package/@angular-material-extensions/google-maps-autocomplete -->
-        <mat-google-maps-autocomplete
-                type="address"
-                (onAutocompleteSelected)="onAutocompleteSelected($event)"
-                (onLocationSelected)="onLocationSelected($event)">
+        <mat-google-maps-autocomplete type="address" (onAutocompleteSelected)="onAutocompleteSelected($event)"
+          (onLocationSelected)="onLocationSelected($event)">
         </mat-google-maps-autocomplete>
       </mat-card-content>
 
+      <mat-form-field class="example-full-width">
+        <mat-label>Register as...</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="Volunteer">Volunteer</mat-option>
+          <mat-option value="Professional">Professional</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-
-
-      
       <button mat-stroked-button color="accent" class="btn-block">Register</button>
 
     </form>
