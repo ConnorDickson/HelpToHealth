@@ -30,9 +30,18 @@
             <mat-option value="Professional">Professional</mat-option>
           </mat-select>
         </mat-form-field>
-
+        <!-- https://www.npmjs.com/package/@angular-material-extensions/google-maps-autocomplete -->
+        <mat-google-maps-autocomplete
+                type="address"
+                (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                (onLocationSelected)="onLocationSelected($event)">
+        </mat-google-maps-autocomplete>
       </mat-card-content>
 
+
+
+
+      
       <button mat-stroked-button color="accent" class="btn-block">Register</button>
 
     </form>
