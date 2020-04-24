@@ -21,6 +21,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { AgmCoreModule } from '@agm/core';
+import { HowItWorksVolunteerComponent } from './components/how-it-works-volunteer/how-it-works-volunteer.component';
+import { HowItWorksOrganisationComponent } from './components/how-it-works-organisation/how-it-works-organisation.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { AgmCoreModule } from '@agm/core';
     LogInComponent,
     RegisterComponent,
     RegisterComponent,
-    LogInComponent
+    LogInComponent,
+    HowItWorksVolunteerComponent,
+    HowItWorksOrganisationComponent
   ],
   imports: [
     BrowserModule,
