@@ -8,7 +8,7 @@
 
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Name">
+          <input matInput [formControl]="name" (change)="onNameChange()" placeholder="Name">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
