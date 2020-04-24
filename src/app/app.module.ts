@@ -23,6 +23,9 @@ import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/go
 import { AgmCoreModule } from '@agm/core';
 import { HowItWorksVolunteerComponent } from './components/how-it-works-volunteer/how-it-works-volunteer.component';
 import { HowItWorksOrganisationComponent } from './components/how-it-works-organisation/how-it-works-organisation.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoggedInVolunteerComponent } from './components/logged-in-volunteer/logged-in-volunteer.component';
+import { LoggedInProfessionalComponent } from './components/logged-in-professional/logged-in-professional.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { HowItWorksOrganisationComponent } from './components/how-it-works-organ
     RegisterComponent,
     LogInComponent,
     HowItWorksVolunteerComponent,
-    HowItWorksOrganisationComponent
+    HowItWorksOrganisationComponent,
+    HomeComponent,
+    LoggedInVolunteerComponent,
+    LoggedInProfessionalComponent
   ],
   imports: [
     BrowserModule,

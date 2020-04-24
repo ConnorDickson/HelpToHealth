@@ -19,6 +19,10 @@
           <input matInput placeholder="Phone">
         </mat-form-field>
 
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Availability (DATE PICKER)">
+        </mat-form-field>
+
         <!-- https://www.npmjs.com/package/@angular-material-extensions/google-maps-autocomplete -->
         <mat-google-maps-autocomplete type="address" (onAutocompleteSelected)="onAutocompleteSelected($event)"
           (onLocationSelected)="onLocationSelected($event)">
@@ -26,7 +30,7 @@
       </mat-card-content>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Register as...</mat-label>
+        <mat-label>Types of Care?</mat-label>
         <mat-select [(value)]="selected">
           <mat-option value="Volunteer">Volunteer</mat-option>
           <mat-option value="Professional">Professional</mat-option>
