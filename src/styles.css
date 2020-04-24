@@ -126,6 +126,14 @@ body {
   width: 100%;
 }
 
+.custom-font-size .multiselect-dropdown .dropdown-btn {
+  width: 94% !important; 
+}
+
+.multiselect-dropdown .dropdown-btn {
+  width: auto;
+}
+
 .login-wrapper mat-card-header {
   text-align: center;
   width: 100%;

@@ -26,7 +26,7 @@ import { HowItWorksOrganisationComponent } from './components/how-it-works-organ
 import { HomeComponent } from './components/home/home.component';
 import { LoggedInVolunteerComponent } from './components/logged-in-volunteer/logged-in-volunteer.component';
 import { LoggedInProfessionalComponent } from './components/logged-in-professional/logged-in-professional.component';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -42,6 +42,7 @@ import { LoggedInProfessionalComponent } from './components/logged-in-profession
     LoggedInProfessionalComponent
   ],
   imports: [
+    NgMultiSelectDropDownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
