@@ -47,15 +47,7 @@ export class RegisterComponent implements OnInit {
     { item_id: 7, item_text: 'Sun' }
   ];
   
-  selectedAvailaibility = [
-    { item_id: 1, item_text: 'Mon' },
-    { item_id: 2, item_text: 'Tues' },
-    { item_id: 3, item_text: 'Wed' },
-    { item_id: 4, item_text: 'Thurs' },
-    { item_id: 5, item_text: 'Fri' },
-    { item_id: 6, item_text: 'Sat' },
-    { item_id: 7, item_text: 'Sun' }
-  ];
+  selectedAvailaibility = this.availabilityDropdownList;
   
   availabilitySettings = {
     singleSelection: false,
@@ -88,16 +80,14 @@ export class RegisterComponent implements OnInit {
   //Care picker
 
   careDropdownList = [
-    { item_id: 1, item_text: 'Elderly' },
-    { item_id: 2, item_text: 'Children' },
-    { item_id: 3, item_text: 'Disabled' }
+    { item_id: 1, item_text: 'Illness' },
+    { item_id: 2, item_text: 'Frailty' },
+    { item_id: 3, item_text: 'Disability' },
+    { item_id: 4, item_text: 'Mental health' },
+    { item_id: 5, item_text: 'Addiction' }
   ];
-  
-  selectedCare = [
-    { item_id: 1, item_text: 'Elderly' },
-    { item_id: 2, item_text: 'Children' },
-    { item_id: 3, item_text: 'Disabled' }
-  ];
+
+  selectedCare = this.careDropdownList;
   
   careSettings = {
     singleSelection: false,
