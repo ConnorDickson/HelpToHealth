@@ -9,3 +9,5 @@ Create login and registration UI (User Interface) template with Angular 8, Angul
 - Git Clone Repo
 - Run `npm install`
 - Run `ng serve`
+
+Test
