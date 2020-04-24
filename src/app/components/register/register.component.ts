@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import {Location, Appearance, GermanAddress} from '@angular-material-extensions/google-maps-autocomplete';
 import PlaceResult = google.maps.places.PlaceResult;
 
@@ -10,6 +11,17 @@ import PlaceResult = google.maps.places.PlaceResult;
 
 export class RegisterComponent implements OnInit {
   selected = 'Volunteer';
+  
+  name = new FormControl('', [
+    Validators.required,
+    Validators.min(1)
+  ]);
+
+  onNameChange() {
+    console.log(this.name.value);
+    console.log(this.name.valid);
+  }
+
   constructor() { }
 
   public latitude: number;
