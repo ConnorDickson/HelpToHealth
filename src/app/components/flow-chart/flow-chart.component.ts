@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MatRadioButton, MatRadioChange } from '@angular/material';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-flow-chart',
@@ -9,23 +8,9 @@ import { MatRadioButton, MatRadioChange } from '@angular/material';
 })
 export class FlowChartComponent implements OnInit {
   typeofcare = "Illness";
-  section1value = "";
-  section2avalue = "";
-  section2bvalue = "";
+
 
   constructor(fb: FormBuilder) {
-  }
-
-  onRadio1Change(mrChange: MatRadioChange) {
-    this.section1value = mrChange.value
-  }
-
-  onRadio2aChange(mrChange: MatRadioChange) {
-    this.section2avalue = mrChange.value
-  }
-
-  onRadio2bChange(mrChange: MatRadioChange) {
-    this.section2bvalue = mrChange.value
   }
 
   ngOnInit() {

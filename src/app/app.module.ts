@@ -28,6 +28,11 @@ import { LoggedInVolunteerComponent } from './components/logged-in-volunteer/log
 import { LoggedInProfessionalComponent } from './components/logged-in-professional/logged-in-professional.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { FlowChartComponent } from './components/flow-chart/flow-chart.component';
+import { FlowChartDisabilityComponent } from './components/flow-chart-disability/flow-chart-disability.component';
+import { FlowChartIllnessComponent } from './components/flow-chart-illness/flow-chart-illness.component';
+import { FlowChartFrailtyComponent } from './components/flow-chart-frailty/flow-chart-frailty.component';
+import { FlowChartMentalHealthComponent } from './components/flow-chart-mental-health/flow-chart-mental-health.component';
+import { FlowChartAddictionComponent } from './components/flow-chart-addiction/flow-chart-addiction.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { FlowChartComponent } from './components/flow-chart/flow-chart.component
     HomeComponent,
     LoggedInVolunteerComponent,
     LoggedInProfessionalComponent,
-    FlowChartComponent
+    FlowChartComponent,
+    FlowChartDisabilityComponent,
+    FlowChartIllnessComponent,
+    FlowChartFrailtyComponent,
+    FlowChartMentalHealthComponent,
+    FlowChartAddictionComponent
   ],
   imports: [
     NgMultiSelectDropDownModule.forRoot(),
