@@ -1,7 +1,7 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
   <mat-card class="box">
     <mat-card-header>
-      <mat-card-title>Register</mat-card-title>
+      <mat-card-title>Register as a Volunteer Caregiver</mat-card-title>
     </mat-card-header>
 
     <form class="example-form">
@@ -32,7 +32,7 @@
         </mat-form-field>
 
         <div>
-          <p>Availability</p>
+          <p>When are you able to provide care?</p>
           <ng-multiselect-dropdown #reporteedropDown class="custom-font-size" name="availabilityWindow"
             [placeholder]="'Availability'" [data]="availabilityDropdownList" [(ngModel)]="selectedAvailaibility"
             [settings]="availabilitySettings" (onSelect)="onAvailabilityItemSelect($event)">
@@ -46,7 +46,7 @@
       </mat-card-content>
 
       <div style="padding-bottom: 20px;">
-        <p>Types of Care:</p>
+        <p>What type of care would you like to provide?</p>
         <ng-multiselect-dropdown #reporteedropDown class="custom-font-size" name="careWindow"
           [placeholder]="'Types of Care'" [data]="careDropdownList" [(ngModel)]="selectedCare" [settings]="careSettings"
           (onSelect)="onCareItemSelect($event)">
