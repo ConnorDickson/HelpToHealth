@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+  background-image: url(https://wallpaperaccess.com/full/749844.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -218,4 +218,33 @@ body {
   padding: 1%; 
   border-radius: 10px;
   width: 400px;
+}
+
+#userstable {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#userstable td, #userstable th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+#userstable tr:nth-child(even)
+{
+  background-color: rgba(100, 130, 181, 0.2);
+}
+
+#userstable tr:hover
+{
+  background-color: #96afd9;
+}
+
+#userstable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #6482b5;
+  color: white;
 }
