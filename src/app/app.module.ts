@@ -27,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoggedInVolunteerComponent } from './components/logged-in-volunteer/logged-in-volunteer.component';
 import { LoggedInProfessionalComponent } from './components/logged-in-professional/logged-in-professional.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { FlowChartComponent } from './components/flow-chart/flow-chart.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     HowItWorksOrganisationComponent,
     HomeComponent,
     LoggedInVolunteerComponent,
-    LoggedInProfessionalComponent
+    LoggedInProfessionalComponent,
+    FlowChartComponent
   ],
   imports: [
     NgMultiSelectDropDownModule.forRoot(),

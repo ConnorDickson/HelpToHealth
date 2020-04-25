@@ -167,3 +167,13 @@ body {
   padding: 1%; 
   border-radius: 10px;
 }
+
+.flowchart-box {
+  text-align: center;
+  font-weight: 500; 
+  background-color: 
+  rgba(255, 255, 255, 0.4); 
+  padding: 1%; 
+  border-radius: 10px;
+  width: 400px;
+}
