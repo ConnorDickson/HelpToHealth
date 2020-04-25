@@ -35,6 +35,8 @@ import { FlowChartMentalHealthComponent } from './components/flow-chart-mental-h
 import { FlowChartAddictionComponent } from './components/flow-chart-addiction/flow-chart-addiction.component';
 import { TrainingResourcesAddictionComponent } from './components/training-resources-addiction/training-resources-addiction.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,7 @@ import { TrainingResourcesAddictionComponent } from './components/training-resou
   imports: [
     NgMultiSelectDropDownModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
