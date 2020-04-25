@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoggedInProfessionalComponent } from './components/logged-in-professional/logged-in-professional.component';
 import { LoggedInVolunteerComponent } from './components/logged-in-volunteer/logged-in-volunteer.component';
 import { FlowChartComponent } from './components/flow-chart/flow-chart.component';
+import { TrainingResourcesAddictionComponent } from './components/training-resources-addiction/training-resources-addiction.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'how-it-works-organisation', component: HowItWorksOrganisationComponent },
   { path: 'logged-in-volunteer', component: LoggedInVolunteerComponent },
   { path: 'logged-in-professional', component: LoggedInProfessionalComponent },
-  { path: 'flowchart', component: FlowChartComponent }
+  { path: 'flowchart', component: FlowChartComponent },
+  { path: 'training-resources-addiction', component: TrainingResourcesAddictionComponent }
 ];
 
 @NgModule({
