@@ -33,6 +33,7 @@ import { FlowChartIllnessComponent } from './components/flow-chart-illness/flow-
 import { FlowChartFrailtyComponent } from './components/flow-chart-frailty/flow-chart-frailty.component';
 import { FlowChartMentalHealthComponent } from './components/flow-chart-mental-health/flow-chart-mental-health.component';
 import { FlowChartAddictionComponent } from './components/flow-chart-addiction/flow-chart-addiction.component';
+import { TrainingResourcesAddictionComponent } from './components/training-resources-addiction/training-resources-addiction.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { FlowChartAddictionComponent } from './components/flow-chart-addiction/f
     FlowChartIllnessComponent,
     FlowChartFrailtyComponent,
     FlowChartMentalHealthComponent,
-    FlowChartAddictionComponent
+    FlowChartAddictionComponent,
+    TrainingResourcesAddictionComponent
   ],
   imports: [
     NgMultiSelectDropDownModule.forRoot(),
