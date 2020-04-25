@@ -34,6 +34,10 @@ import { FlowChartFrailtyComponent } from './components/flow-chart-frailty/flow-
 import { FlowChartMentalHealthComponent } from './components/flow-chart-mental-health/flow-chart-mental-health.component';
 import { FlowChartAddictionComponent } from './components/flow-chart-addiction/flow-chart-addiction.component';
 import { TrainingResourcesAddictionComponent } from './components/training-resources-addiction/training-resources-addiction.component';
+import { TrainingResourcesFrailtyComponent } from './components/training-resources-frailty/training-resources-frailty.component';
+import { TrainingResourcesDisabilityComponent } from './components/training-resources-disability/training-resources-disability.component';
+import { TrainingResourcesIllnessComponent } from './components/training-resources-illness/training-resources-illness.component';
+import { TrainingResourcesMentalHealthComponent } from './components/training-resources-mental-health/training-resources-mental-health.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,11 @@ import { TrainingResourcesAddictionComponent } from './components/training-resou
     FlowChartFrailtyComponent,
     FlowChartMentalHealthComponent,
     FlowChartAddictionComponent,
-    TrainingResourcesAddictionComponent
+    TrainingResourcesAddictionComponent,
+    TrainingResourcesFrailtyComponent,
+    TrainingResourcesDisabilityComponent,
+    TrainingResourcesIllnessComponent,
+    TrainingResourcesMentalHealthComponent
   ],
   imports: [
     NgMultiSelectDropDownModule.forRoot(),
@@ -65,7 +73,7 @@ import { TrainingResourcesAddictionComponent } from './components/training-resou
     FormsModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      apiKey: '',
+      apiKey: 'AIzaSyCTAhtd3SC0ai8PxziTTKs56v_-OM8x4LM',
       libraries: ['places']
     }),
     MatGoogleMapsAutocompleteModule
