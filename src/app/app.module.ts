@@ -73,7 +73,7 @@ import { TrainingResourcesMentalHealthComponent } from './components/training-re
     FormsModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCTAhtd3SC0ai8PxziTTKs56v_-OM8x4LM',
+      apiKey: '',
       libraries: ['places']
     }),
     MatGoogleMapsAutocompleteModule
