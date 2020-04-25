@@ -11,8 +11,7 @@ import { JsonPipe } from '@angular/common';
 })
 export class LoggedInProfessionalComponent implements OnInit {
   
-  apiresponse = "";
-  headers = ["id", "name", "email", "phoneNumber", "address", "organisationEntityID", "availability", "typesOfCare"];
+  headers = ["ID", "Name", "Address", "Distance", "Phone", "E-Mail", "Availability", "Types of Care"];
 
   rows = [
   ]
@@ -27,8 +26,6 @@ export class LoggedInProfessionalComponent implements OnInit {
   }
 
   onLocationSelected(location: Location) {
-    this.apiresponse = "called";
-
     console.log('onLocationSelected: ', location);
     this.latitude = location.latitude;
     this.longitude = location.longitude;
@@ -36,7 +33,19 @@ export class LoggedInProfessionalComponent implements OnInit {
     let address = "https://helptocare-api.azurewebsites.net/api/CareGiverActions/nearLocation?clientLocation=" + this.formattedAddress;
     console.log(address);
     this.http.get(address).subscribe(
-        (data:any) => { this.rows = data; this.apiresponse = JSON.stringify(data);},
+        (data:any[]) => {this.rows = [];
+          data.forEach(element => {
+          this.rows.push({
+            "ID" : element.careVolunteer.id,
+            "Name": element.careVolunteer.name,
+            "Address": element.careVolunteer.address, 
+            "Distance": element.distance.text, 
+            "Phone": element.careVolunteer.phoneNumber, 
+            "E-Mail": element.careVolunteer.email, 
+            "Availability": element.careVolunteer.availabilityFrom, 
+            "Types of Care": element.careVolunteer.willingToDo
+          });
+        }); },
         err => console.error(err),
         () => console.log('Done searching users')
       );
