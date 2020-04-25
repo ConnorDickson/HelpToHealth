@@ -23,7 +23,8 @@ export class RegisterComponent implements OnInit {
   ]);
 
   email = new FormControl('', [
-    Validators.required
+    Validators.required,
+    Validators.email
   ]);
 
   phone = new FormControl('', [
