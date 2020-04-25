@@ -41,6 +41,10 @@
         </ng-multiselect-dropdown>
       </div>
 
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" [formControl]="password" (change)="onPasswordChange()" placeholder="Password">
+      </mat-form-field>
+
       <button mat-stroked-button color="accent" class="btn-block" (click)="onRegisterClick()">Register</button>
 
     </form>

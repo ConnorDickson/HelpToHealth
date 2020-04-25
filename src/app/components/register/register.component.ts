@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import {Location, Appearance, GermanAddress} from '@angular-material-extensions/google-maps-autocomplete';
 import PlaceResult = google.maps.places.PlaceResult;
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Component({
   selector: 'app-register',
@@ -10,8 +15,8 @@ import PlaceResult = google.maps.places.PlaceResult;
 })
 
 export class RegisterComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private http:HttpClient) { }
 
   name = new FormControl('', [
     Validators.required
@@ -25,6 +30,10 @@ export class RegisterComponent implements OnInit {
     Validators.required
   ]);
 
+  password = new FormControl('', [
+    Validators.required
+  ]);
+
   onNameChange() {
     // console.log(this.name.value);
   }
@@ -34,6 +43,10 @@ export class RegisterComponent implements OnInit {
   }
 
   onPhoneChange() {
+    // console.log(this.phone.value);
+  }
+
+  onPasswordChange() {
     // console.log(this.phone.value);
   }
 
@@ -64,11 +77,14 @@ export class RegisterComponent implements OnInit {
 
   //Location Picker
   
+  public formattedAddress = "";
   public latitude: number;
   public longitude: number;
 
   onAutocompleteSelected(result: PlaceResult) {
     console.log('onAddressSelected: ', result);
+    this.formattedAddress = result.formatted_address;
+    console.log(this.formattedAddress);
   }
 
   onLocationSelected(location: Location) {
@@ -103,12 +119,27 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegisterClick() {
-    console.log("Name: ", this.name.value);
-    console.log("Email: ", this.email.value);
-    console.log("Phone: ", this.phone.value);
-    console.log("Availability: ", this.selectedAvailaibility);
-    console.log("Address (long, lat): ", this.longitude, this.latitude);
-    console.log("Care: ", this.selectedCare);
+    let registerDetails = {
+      "name": this.name.value,
+      "address": this.formattedAddress,
+      "phoneNumber": this.phone.value,
+      "email": this.email.value,
+      "availabilityFrom": Array.prototype.map.call(this.selectedAvailaibility, function(item) { return item.item_text; }).join(","),
+      "willingToDo": Array.prototype.map.call(this.selectedCare, function(item) { return item.item_text; }).join(","),
+      "latitude": this.latitude,
+      "longitude": this.longitude,
+      "password": this.password.value
+    };
+
+    let body = JSON.stringify(registerDetails);
+    console.log(body);
+    this.http.post('https://helptocare-api.azurewebsites.net/api/CareVolunteerActions/registerCareVolunteer', body, httpOptions).subscribe(
+        (data: any) => { console.log(data);
+        },
+        error => {
+          console.error("Error saving person!", error);
+        }
+     );
   }
 
   ngOnInit() {

@@ -19,9 +19,11 @@ export class LoggedInProfessionalComponent implements OnInit {
 
   public latitude: number;
   public longitude: number;
+  public formattedAddress: string;
 
   onAutocompleteSelected(result: PlaceResult) {
     console.log('onAddressSelected: ', result);
+    this.formattedAddress = result.formatted_address;
   }
 
   onLocationSelected(location: Location) {
@@ -31,11 +33,13 @@ export class LoggedInProfessionalComponent implements OnInit {
     this.latitude = location.latitude;
     this.longitude = location.longitude;
 
-   this.http.get("https://helptocare-api.azurewebsites.net/api/CareGiverActions").subscribe(
-      (data:any) => { this.rows = data; this.apiresponse = JSON.stringify(data);},
-      err => console.error(err),
-      () => console.log('Done searching users')
-    );
+    let address = "https://helptocare-api.azurewebsites.net/api/CareGiverActions/nearLocation?clientLocation=" + this.formattedAddress;
+    console.log(address);
+    this.http.get(address).subscribe(
+        (data:any) => { this.rows = data; this.apiresponse = JSON.stringify(data);},
+        err => console.error(err),
+        () => console.log('Done searching users')
+      );
   }
 
   constructor(private http:HttpClient) { 
