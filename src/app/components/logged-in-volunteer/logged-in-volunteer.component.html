@@ -2,18 +2,22 @@
     
     <div style="height: 10%"></div>    
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
         <h1>Hi (Logged in Volunteer)</h1>
+        <h2>Browse all of your allocated training resources and when completed check them off to become eligible for recieving assignments! </h2>
     </div>
 
-    <div style="height: 10%"></div>    
+    <div style="height: 5%"></div>    
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+    <div class="form-group" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <mat-card class="infobox">
             <mat-card-header>
-                <mat-card-title>Resources For Elderly Care</mat-card-title>
+                <mat-card-title>Resources For Addiction</mat-card-title>
                 <mat-card-content>
-                    <a href="blaa"><p>Click here for resources around providing care for the elderly</p></a>
+                    <a href="//google.com"><p>Click here for resources around providing care for individuals recovering from addiction</p></a>
+                    <mat-radio-group (change)="onRadioAddiction($event)">
+                        <mat-radio-button value="true">I have completed these training resources</mat-radio-button>
+                    </mat-radio-group>
                 </mat-card-content>
             </mat-card-header>
         </mat-card>
@@ -22,50 +26,62 @@
             <mat-card-header>
                 <mat-card-title>Resources For Disabilty</mat-card-title>
                 <mat-card-content>
-                    <a href="blaa"><p>Click here for resources around providing care for individuals with a Disabilty</p></a>
+                    <a href="blaa"><p>Click here for resources around providing care for individuals with a disabilty</p></a>
+                    <mat-radio-group (change)="onRadioDisabilty($event)">
+                        <mat-radio-button value="true">I have completed these training resources</mat-radio-button>
+                    </mat-radio-group>                
                 </mat-card-content>
             </mat-card-header>
         </mat-card>
 
-        <mat-card class="infobox">
-            <mat-card-header>
-                <mat-card-title>Resources For Children</mat-card-title>
-                <mat-card-content>
-                    <a href="blaa"><p>Click here for training resources around Childcare</p></a>
-                </mat-card-content>
-            </mat-card-header>
-        </mat-card>
     </div>
 
-    <div style="height: 10%"></div>    
+    <div style="height: 5%"></div>    
 
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <mat-card class="infobox">
             <mat-card-header>
-                <mat-card-title>Resources For Elderly Care</mat-card-title>
+                <mat-card-title>Resources For Illness</mat-card-title>
                 <mat-card-content>
-                    <a href="blaa"><p>Click here for resources around providing care for the elderly</p></a>
+                    <a href="blaa"><p>Click here for resources around providing care for those who have a limiting & serious illness</p></a>
+                    <mat-radio-group (change)="onRadioIllness($event)">
+                        <mat-radio-button value="true">I have completed these training resources</mat-radio-button>
+                    </mat-radio-group>
                 </mat-card-content>
             </mat-card-header>
         </mat-card>
 
         <mat-card class="infobox">
             <mat-card-header>
-                <mat-card-title>Resources For Disabilty</mat-card-title>
+                <mat-card-title>Resources For the Frail</mat-card-title>
                 <mat-card-content>
-                    <a href="blaa"><p>Click here for resources around providing care for individuals with a Disabilty</p></a>
+                    <a href="blaa"><p>Click here for resources around providing care for frail individuals who require special attention</p></a>
+                    <mat-radio-group (change)="onRadioFrail($event)">
+                        <mat-radio-button value="true">I have completed these training resources</mat-radio-button>
+                    </mat-radio-group>
                 </mat-card-content>
             </mat-card-header>
         </mat-card>
 
         <mat-card class="infobox">
             <mat-card-header>
-                <mat-card-title>Resources For Children</mat-card-title>
+                <mat-card-title>Resources For Mental Illness</mat-card-title>
                 <mat-card-content>
-                    <a href="blaa"><p>Click here for training resources around Childcare</p></a>
+                    <a href="blaa"><p>Click here for resources around providing care for individuals who are struggling with mental health issues </p></a>
+                    <mat-radio-group (change)="onRadioMentalHealth($event)">
+                        <mat-radio-button value="true">I have completed these training resources</mat-radio-button>
+                    </mat-radio-group>
                 </mat-card-content>
             </mat-card-header>
         </mat-card>
+
     </div>
+
+    <div style="height: 5%"></div>    
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+        <button mat-raised-button color="primary">Submit training progress!</button>
+    </div>
+
 
 </div>
