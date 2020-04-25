@@ -3,6 +3,7 @@ import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import {Location, Appearance, GermanAddress} from '@angular-material-extensions/google-maps-autocomplete';
 import PlaceResult = google.maps.places.PlaceResult;
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,7 +17,7 @@ const httpOptions = {
 
 export class RegisterComponent implements OnInit {
   
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, public router: Router) { }
 
   name = new FormControl('', [
     Validators.required
@@ -149,7 +150,11 @@ export class RegisterComponent implements OnInit {
     let body = JSON.stringify(registerDetails);
     console.log(body);
     this.http.post('https://helptocare-api.azurewebsites.net/api/CareVolunteerActions/registerCareVolunteer', body, httpOptions).subscribe(
-        (data: any) => { console.log(data);
+        (data: any) => { 
+          
+          this.router.navigate(["logged-in-volunteer"])
+          
+          console.log(data);
         },
         error => {
           console.error("Error saving person!", error);
