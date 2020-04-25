@@ -15,7 +15,8 @@ export class LogInComponent implements OnInit {
   apiresponse = "";
 
   email = new FormControl('', [
-    Validators.required
+    Validators.required,
+    Validators.email
   ]);
 
   password = new FormControl('', [
@@ -26,13 +27,13 @@ export class LogInComponent implements OnInit {
 
   onLoginClick() {
     let loginDetails = {
-      "username": this.email.value,
+      "email": this.email.value,
       "password": this.password.value
     };
 
     let body = JSON.stringify(loginDetails);
     console.log(body);
-    this.http.post('https://helptocare-api.azurewebsites.net/api/CareVolunteerActions/login', body, httpOptions).subscribe(
+    this.http.post('https://helptocare-api.azurewebsites.net/api/Login', body, httpOptions).subscribe(
         (data: any) => { console.log(data);
         },
         error => {
