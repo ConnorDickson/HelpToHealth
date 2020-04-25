@@ -39,6 +39,8 @@ import { TrainingResourcesDisabilityComponent } from './components/training-reso
 import { TrainingResourcesIllnessComponent } from './components/training-resources-illness/training-resources-illness.component';
 import { TrainingResourcesMentalHealthComponent } from './components/training-resources-mental-health/training-resources-mental-health.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +68,7 @@ import { TrainingResourcesMentalHealthComponent } from './components/training-re
   imports: [
     NgMultiSelectDropDownModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,

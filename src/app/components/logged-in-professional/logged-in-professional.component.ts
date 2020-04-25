@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import PlaceResult = google.maps.places.PlaceResult;
-import {Location, Appearance, GermanAddress} from '@angular-material-extensions/google-maps-autocomplete';
+import { Location } from '@angular-material-extensions/google-maps-autocomplete';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-logged-in-professional',
@@ -8,42 +10,11 @@ import {Location, Appearance, GermanAddress} from '@angular-material-extensions/
   styleUrls: ['./logged-in-professional.component.css']
 })
 export class LoggedInProfessionalComponent implements OnInit {
-
-  headers = ["ID", "Name", "Email", "Availability", "Address", "Types of Care"];
+  
+  apiresponse = "";
+  headers = ["id", "name", "email", "phoneNumber", "address", "organisationEntityID", "availability", "typesOfCare"];
 
   rows = [
-    {
-      "ID" : "1",
-      "Name" : "Rahul",
-      "Email" : "21",
-      "Availability" : "Fri,Sat,Sun",
-      "Address" : "33 Belfast Drive",
-      "Types of Care": "Mental Health,Addiction,Frailty"
-    },
-    {
-      "ID" : "2",
-      "Name" : "Connor",
-      "Email" : "jklj@gmail.com",
-      "Availability" : "Mon,Tues,Wed",
-      "Address" : "192 Amazing Street",
-      "Types of Care": "Frailty"
-    },
-    {
-      "ID" : "3",
-      "Name" : "Sean",
-      "Email" : "sean@cool.com",
-      "Availability" : "Wed,Sat,Sun",
-      "Address" : "60 Heh Court",
-      "Types of Care": "Frailty,Addiction"
-    },
-    {
-      "ID" : "4",
-      "Name" : "Scott",
-      "Email" : "scott@okay.com",
-      "Availability" : "Mon,Tues,Wed,Thurs,Fri,Sat,Sun",
-      "Address" : "<missing>",
-      "Types of Care": "Illness,Frailty,Disability,Mental Health,Addiction"
-    }
   ]
 
   public latitude: number;
@@ -54,12 +25,22 @@ export class LoggedInProfessionalComponent implements OnInit {
   }
 
   onLocationSelected(location: Location) {
+    this.apiresponse = "called";
+
     console.log('onLocationSelected: ', location);
     this.latitude = location.latitude;
     this.longitude = location.longitude;
+
+   this.http.get("https://helptocare-api.azurewebsites.net/api/CareGiverActions").subscribe(
+      (data:any) => { this.rows = data; this.apiresponse = JSON.stringify(data);},
+      err => console.error(err),
+      () => console.log('Done searching users')
+    );
   }
 
-  constructor() { }
+  constructor(private http:HttpClient) { 
+
+  }
 
   ngOnInit() {
   }

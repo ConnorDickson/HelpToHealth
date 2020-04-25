@@ -4,15 +4,16 @@
 
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
         <h1>Hi (Logged in Professional)</h1>
-        <h2>Enter a search location and find a list of closest volunteers</h2>
+        <h2>Enter a search location and find the closest 5 volunteers</h2>
     </div>
 
     <div style="height: 5%"></div>    
 
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-        <mat-google-maps-autocomplete style="width: 400px;" type="address" (onAutocompleteSelected)="onAutocompleteSelected($event)"
+        <mat-google-maps-autocomplete style="width: 500px;" type="address" (onAutocompleteSelected)="onAutocompleteSelected($event)"
             (onLocationSelected)="onLocationSelected($event)">
         </mat-google-maps-autocomplete>
+        <p>{{apiresponse}}</p>
         <table id="userstable">
             <tr>
                 <th *ngFor = "let column of headers">
