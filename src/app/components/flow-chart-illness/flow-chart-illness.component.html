@@ -3,7 +3,7 @@
     <!-- Section 1 -->
 
     <div class="flowchart-box" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
-        <label>Can you make contact with the ill person?</label>
+        <label>1. Can you make contact with the Careseeker?</label>
         <mat-radio-group name="radio1" (change)="onRadio1Change($event)">
             <mat-radio-button value="FlowA">Yes</mat-radio-button>
             <mat-radio-button value="FlowB">No</mat-radio-button>
@@ -14,14 +14,14 @@
 
     <div fxLayout="row" fxLayoutGap="25px">
         <div class="flowchart-box" fxLayout="column" fxLayoutGap="25px">
-            <label>Does the person seem healthy?</label>
+            <label>2. Does the person seem healthy?</label>
             <mat-radio-group [disabled]="section1value != 'FlowA'" (change)="onRadio2aChange($event)">
                 <mat-radio-button value="FlowA-1">Healthy</mat-radio-button>
                 <mat-radio-button value="FlowA-2">Unhealthy</mat-radio-button>
             </mat-radio-group>
         </div>
         <div class="flowchart-box" fxLayout="column" fxLayoutGap="25px">
-            <label>Can you see anything wrong through the windows?</label>
+            <label>2. Can you see anything wrong through the windows?</label>
             <mat-radio-group [disabled]="section1value != 'FlowB'" (change)="onRadio2bChange($event)">
                 <mat-radio-button value="FlowB-1">Everything looks fine</mat-radio-button>
                 <mat-radio-button value="FlowB-2">I see a problem</mat-radio-button>
@@ -33,28 +33,28 @@
 
     <div fxLayout="row" fxLayoutGap="25px">
         <div class="flowchart-box" fxLayout="column" fxLayoutGap="25px">
-            <label>Ask them if they need help</label>
+            <label>3. Ask them if they need help</label>
             <mat-radio-group [disabled]="section2avalue != 'FlowA-1'">
                 <mat-radio-button value="FlowA-1">They're okay</mat-radio-button>
                 <mat-radio-button value="FlowA-2">They require assistance</mat-radio-button>
             </mat-radio-group>
         </div>
         <div class="flowchart-box" fxLayout="column" fxLayoutGap="25px">
-            <label>Ask to enter the premises</label>
+            <label>3. Ask to enter the premises</label>
             <mat-radio-group [disabled]="section2avalue != 'FlowA-2'">
                 <mat-radio-button value="FlowB-1">I can see visable issues</mat-radio-button>
                 <mat-radio-button value="FlowB-2">The area looks clean</mat-radio-button>
             </mat-radio-group>
         </div>
         <div class="flowchart-box" fxLayout="column" fxLayoutGap="25px">
-            <label>Ring the doorbell and knock the door</label>
+            <label>3. Ring the doorbell and knock the door</label>
             <mat-radio-group [disabled]="section2bvalue != 'FlowB-1'">
                 <mat-radio-button value="FlowA-1">Nobody answered</mat-radio-button>
                 <mat-radio-button value="FlowA-2">I got in</mat-radio-button>
             </mat-radio-group>
         </div>
         <div class="flowchart-box" fxLayout="column" fxLayoutGap="25px">
-            <label>Phone the emergency contact number provided</label>
+            <label>3. Phone the emergency contact number provided by the Care Organisation</label>
             <mat-radio-group [disabled]="section2bvalue != 'FlowB-2'">
                 <mat-radio-button value="FlowB-1">Issue is solved</mat-radio-button>
                 <mat-radio-button value="FlowB-2">I require more help</mat-radio-button>

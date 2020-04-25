@@ -11,7 +11,9 @@ import { JsonPipe } from '@angular/common';
 })
 export class LoggedInProfessionalComponent implements OnInit {
   
-  headers = ["ID", "Name", "Address", "Distance", "Phone", "E-Mail", "Availability", "Types of Care"];
+  headers = ["ID", "Name", "Volunteer Address", "Distance to Careseeker", "Phone", "E-Mail", "Availability", "Types of Care"];
+  
+  date = new Date();
 
   rows = [
   ]
@@ -38,8 +40,8 @@ export class LoggedInProfessionalComponent implements OnInit {
           this.rows.push({
             "ID" : element.careVolunteer.id,
             "Name": element.careVolunteer.name,
-            "Address": element.careVolunteer.address, 
-            "Distance": element.distance.text, 
+            "Volunteer Address": element.careVolunteer.address, 
+            "Distance to Careseeker": element.distance.text, 
             "Phone": element.careVolunteer.phoneNumber, 
             "E-Mail": element.careVolunteer.email, 
             "Availability": element.careVolunteer.availabilityFrom, 

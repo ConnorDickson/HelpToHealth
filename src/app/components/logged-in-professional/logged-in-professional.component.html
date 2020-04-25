@@ -4,7 +4,7 @@
 
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
         <h1>Hi (Logged in Professional)</h1>
-        <h2>Enter a search location and find the closest 5 volunteers</h2>
+        <h2>Enter the address of the Careseeker and find the closest 5 volunteers</h2>
     </div>
 
     <div style="height: 5%"></div>    
@@ -13,6 +13,12 @@
         <mat-google-maps-autocomplete style="width: 500px;" type="address" (onAutocompleteSelected)="onAutocompleteSelected($event)"
             (onLocationSelected)="onLocationSelected($event)">
         </mat-google-maps-autocomplete>
+
+        <div ng-app ng-controller="Ctrl">
+            Todays Date: {{date | date:'EEE dd-MM-yyyy'}}
+        </div>
+
+        <p>Please find the list of Closest volunteers below</p>
         <table id="userstable">
             <tr>
                 <th *ngFor = "let column of headers">
