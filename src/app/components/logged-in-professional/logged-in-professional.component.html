@@ -13,7 +13,6 @@
         <mat-google-maps-autocomplete style="width: 500px;" type="address" (onAutocompleteSelected)="onAutocompleteSelected($event)"
             (onLocationSelected)="onLocationSelected($event)">
         </mat-google-maps-autocomplete>
-        <p>{{apiresponse}}</p>
         <table id="userstable">
             <tr>
                 <th *ngFor = "let column of headers">
