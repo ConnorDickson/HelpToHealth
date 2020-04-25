@@ -76,7 +76,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-      apiKey: '',
+      apiKey: 'AIzaSyCTAhtd3SC0ai8PxziTTKs56v_-OM8x4LM',
       libraries: ['places']
     }),
     MatGoogleMapsAutocompleteModule
