@@ -11,7 +11,7 @@ import { JsonPipe } from '@angular/common';
 })
 export class LoggedInProfessionalComponent implements OnInit {
   
-  headers = ["ID", "Name", "Volunteer Address", "Distance to Careseeker", "Phone", "E-Mail", "Availability", "Types of Care"];
+  headers = ["ID", "Name", "Volunteer Address", "Distance to Careseeker", "Phone", "E-Mail", "Availability", "Types of Care", "Recent Utilisation"];
   
   date = new Date();
 
@@ -21,6 +21,11 @@ export class LoggedInProfessionalComponent implements OnInit {
   public latitude: number;
   public longitude: number;
   public formattedAddress: string;
+
+  generateRandomNumber(){
+    var number = Math.floor(Math.random() * 100);
+    return number;
+  }
 
   onAutocompleteSelected(result: PlaceResult) {
     console.log('onAddressSelected: ', result);
@@ -37,6 +42,16 @@ export class LoggedInProfessionalComponent implements OnInit {
     this.http.get(address).subscribe(
         (data:any[]) => {this.rows = [];
           data.forEach(element => {
+
+          var x = this.generateRandomNumber(); 
+          var utilisation = "Average";
+          if(x <= 33) { 
+            utilisation = "Below Average";
+          } 
+          else if(x >= 66) { 
+            utilisation = "Above Average" 
+          }         
+
           this.rows.push({
             "ID" : element.careVolunteer.id,
             "Name": element.careVolunteer.name,
@@ -45,7 +60,8 @@ export class LoggedInProfessionalComponent implements OnInit {
             "Phone": element.careVolunteer.phoneNumber, 
             "E-Mail": element.careVolunteer.email, 
             "Availability": element.careVolunteer.availabilityFrom, 
-            "Types of Care": element.careVolunteer.willingToDo
+            "Types of Care": element.careVolunteer.willingToDo,
+            "Recent Utilisation": utilisation
           });
         }); },
         err => console.error(err),
