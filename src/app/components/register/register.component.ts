@@ -53,27 +53,20 @@ export class RegisterComponent implements OnInit {
   }
 
   availabilityDropdownList = [
-    { item_id: 1, item_text: 'Mon Morn' },
-    { item_id: 2, item_text: 'Tue Morn' },
-    { item_id: 3, item_text: 'Wed Morn' },
-    { item_id: 4, item_text: 'Thu Morn' },
-    { item_id: 5, item_text: 'Fri Morn' },
-    { item_id: 6, item_text: 'Sat Morn' },
-    { item_id: 7, item_text: 'Sun Morn' },
-    { item_id: 8, item_text: 'Mon Avo' },
-    { item_id: 9, item_text: 'Tue Avo' },
-   { item_id: 10, item_text: 'Wed Avo' },
-   { item_id: 11, item_text: 'Thu Avo' },
-   { item_id: 12, item_text: 'Fri Avo' },
-   { item_id: 13, item_text: 'Sat Avo' },
-   { item_id: 14, item_text: 'Sun Avo' },
-   { item_id: 15, item_text: 'Mon Eve' },
-   { item_id: 16, item_text: 'Tue Eve' },
-   { item_id: 17, item_text: 'Wed Eve' },
-   { item_id: 18, item_text: 'Thu Eve' },
-   { item_id: 19, item_text: 'Fri Eve' },
-   { item_id: 20, item_text: 'Sat Eve' },
-   { item_id: 21, item_text: 'Sun Eve' }
+    { item_id: 1, item_text: 'Mon AM' },
+    { item_id: 2, item_text: 'Mon PM' },
+    { item_id: 3, item_text: 'Tue AM' },
+    { item_id: 4, item_text: 'Tue PM' },
+    { item_id: 5, item_text: 'Wed AM' },
+    { item_id: 6, item_text: 'Wed PM' },
+    { item_id: 7, item_text: 'Thu AM' },
+    { item_id: 8, item_text: 'Thu PM' },
+    { item_id: 9, item_text: 'Fri AM' },
+    { item_id: 10, item_text: 'Fri PM' },
+    { item_id: 11, item_text: 'Sat AM' },
+    { item_id: 12, item_text: 'Sat PM' },
+    { item_id: 12, item_text: 'Sun AM' },
+    { item_id: 13, item_text: 'Sun PM' },
   ];
   
   selectedAvailaibility = this.availabilityDropdownList;
